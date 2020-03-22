@@ -1,11 +1,15 @@
 ﻿using System;
+using SQLite;
 
 namespace gaweFirstSimpleNoteApp.Models
 {
     public class Note
     {
-        public string FilePath { get; set; }
-        public string FileName { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [NotNull]
+        public string Title { get; set; }
+        [NotNull]
         public string Text { get; set; }
         public DateTimeOffset Date { get; set; }
     }

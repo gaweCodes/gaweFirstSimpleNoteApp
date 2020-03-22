@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using gaweFirstSimpleNoteApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,19 +15,15 @@ namespace gaweFirstSimpleNoteApp
         private async void SaveNote(object sender, EventArgs e)
         {
             var note = (Note)BindingContext;
-            if (string.IsNullOrWhiteSpace(note.FilePath))
-            {
-                var filename = Path.Combine(App.FolderPath, $"{Path.GetRandomFileName()}.gaweNotes.txt");
-                File.WriteAllText(filename, note.Text);
-            }
-            else
-                File.WriteAllText(note.FilePath, note.Text);
+            note.Date = DateTimeOffset.Now;
+            await App.Database.SaveNoteAsync(note);
             await Navigation.PopAsync();
         }
         private async void DeleteNote(object sender, EventArgs e)
         {
             var note = (Note)BindingContext;
-            if (File.Exists(note.FilePath)) File.Delete(note.FilePath);
+            if(!await DisplayAlert("GaweNotes", $"Are you sure you want to delete the {note.Title} note?", "Yes", "Cancel")) return;
+            await App.Database.DeleteNoteAsync(note);
             await Navigation.PopAsync();
         }
     }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using gaweFirstSimpleNoteApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,28 +12,20 @@ namespace gaweFirstSimpleNoteApp
         {
             InitializeComponent();
         }
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
-            var notes = new List<Note>();
-            var files = Directory.EnumerateFiles(App.FolderPath, "*.gaweNotes.txt");
-            Parallel.ForEach(files, file =>
-            {
-                var newNote = new Note
-                {
-                    Date = File.GetCreationTime(file),
-                    Text = File.ReadAllText(file),
-                    FileName = Path.GetFileNameWithoutExtension(file),
-                    FilePath = file
-                };
-                notes.Add(newNote);
-            });
-            listView.ItemsSource = notes.OrderBy(d => d.Date).ToList();
+            listView.ItemsSource = await App.Database.GetNotesAsync();
         }
-        private async void AddNote(object sender, EventArgs e) => await Navigation.PushAsync(new NoteEntryPage
+        private async void AddNote(object sender, EventArgs e)
         {
-            BindingContext = new Note()
-        });
+            var title = await DisplayPromptAsync("Note Title", "enter a note title", "Done", "Cancel", "Note title");
+            if (string.IsNullOrWhiteSpace(title)) return;
+            await Navigation.PushAsync(new NoteEntryPage
+            {
+                BindingContext = new Note { Title = title }
+            });
+        }
         private async void NoteSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null) return;

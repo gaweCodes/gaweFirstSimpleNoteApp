@@ -12,7 +12,7 @@
     <ListView x:Name="listView" Margin="20" ItemSelected="NoteSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell TextColor="Black" Text="{Binding FileName}" Detail="{Binding Date}" />
+                <TextCell TextColor="Black" Text="{Binding Title}" Detail="{Binding Date}" />
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
