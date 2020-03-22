@@ -15,7 +15,7 @@ namespace gaweFirstSimpleNoteApp
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            listView.ItemsSource = await App.Database.GetNotesAsync();
+            NotesListView.ItemsSource = await App.Database.GetNotesAsync();
         }
         private async void AddNote(object sender, EventArgs e)
         {

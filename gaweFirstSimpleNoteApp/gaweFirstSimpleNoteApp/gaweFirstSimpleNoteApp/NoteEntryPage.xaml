@@ -6,7 +6,18 @@
              mc:Ignorable="d"
              x:Class="gaweFirstSimpleNoteApp.NoteEntryPage"
              Title="Note Entry">
-    <StackLayout Margin="20">
+    <ContentPage.Resources>
+        <Style TargetType="{x:Type Editor}">
+            <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+        </Style>
+        <Style TargetType="Button" ApplyToDerivedTypes="True" CanCascade="True">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="BackgroundColor" Value="AliceBlue" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="CornerRadius" Value="5" />
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout Margin="{StaticResource PageMargin}">
         <Editor Placeholder="Enter your note text" Text="{Binding Text}" HeightRequest="100" />
         <Grid>
             <Grid.ColumnDefinitions>

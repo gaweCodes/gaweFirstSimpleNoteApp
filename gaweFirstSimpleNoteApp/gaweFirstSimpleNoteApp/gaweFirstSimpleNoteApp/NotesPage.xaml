@@ -6,10 +6,15 @@
              mc:Ignorable="d"
              x:Class="gaweFirstSimpleNoteApp.NotesPage"
              Title="Notes">
+    <ContentPage.Resources>
+        <Style TargetType="{x:Type ListView}">
+            <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+" Clicked="AddNote" />
+        <ToolbarItem Text="+" Clicked="AddNote" Order="Primary" />
     </ContentPage.ToolbarItems>
-    <ListView x:Name="listView" Margin="20" ItemSelected="NoteSelected">
+    <ListView x:Name="NotesListView" Margin="{StaticResource PageMargin}" ItemSelected="NoteSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell TextColor="Black" Text="{Binding Title}" Detail="{Binding Date}" />
