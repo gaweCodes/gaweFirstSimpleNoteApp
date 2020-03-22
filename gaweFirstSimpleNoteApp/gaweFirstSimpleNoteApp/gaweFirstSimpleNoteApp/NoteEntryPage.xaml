@@ -4,10 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="gaweFirstSimpleNoteApp.MainPage">
-    <StackLayout Margin="10,35,10,10">
-        <Label Text="Notes" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" FontFamily="Arial" />
-        <Editor x:Name="NoteTextEditor" Placeholder="Enter your note" HeightRequest="100" />
+             x:Class="gaweFirstSimpleNoteApp.NoteEntryPage"
+             Title="Note Entry">
+    <StackLayout Margin="20">
+        <Editor Placeholder="Enter your note text" Text="{Binding Text}" HeightRequest="100" />
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
