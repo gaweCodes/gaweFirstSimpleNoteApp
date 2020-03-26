@@ -7,9 +7,9 @@
              x:Class="gaweFirstSimpleNoteApp.App">
     <Application.Resources>
         <Thickness x:Key="PageMargin" Bottom="20" Left="20" Right="20" Top="20" />
-        <Color x:Key="BackgroundColor">AliceBlue</Color>
-        <Color x:Key="NavigationBarColor">Gray</Color>
-        <Color x:Key="NavigationBarTextColor">White</Color>
+        <Color x:Key="BackgroundColor">White</Color>
+        <Color x:Key="NavigationBarColor">LightGray</Color>
+        <Color x:Key="NavigationBarTextColor">black</Color>
         <Style TargetType="{x:Type NavigationPage}">
             <Setter Property="BarBackgroundColor"
                     Value="{StaticResource NavigationBarColor}" />

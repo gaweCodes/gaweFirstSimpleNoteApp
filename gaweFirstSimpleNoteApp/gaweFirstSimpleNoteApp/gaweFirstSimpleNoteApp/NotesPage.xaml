@@ -12,12 +12,12 @@
         </Style>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+" Clicked="AddNote" Order="Primary" />
+        <ToolbarItem x:Name="AddNoteToolbarItem" Clicked="AddNote" Order="Primary" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="NotesListView" Margin="{StaticResource PageMargin}" ItemSelected="NoteSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell TextColor="Black" Text="{Binding Title}" Detail="{Binding Date}" />
+                <TextCell TextColor="Black" Text="{Binding Title}" DetailColor="#2C2C2C" Detail="{Binding Date}" />
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

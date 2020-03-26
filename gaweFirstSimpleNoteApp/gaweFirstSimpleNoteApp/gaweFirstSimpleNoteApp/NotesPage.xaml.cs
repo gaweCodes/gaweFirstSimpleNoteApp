@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using gaweFirstSimpleNoteApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,6 +12,9 @@ namespace gaweFirstSimpleNoteApp
         public NotesPage()
         {
             InitializeComponent();
+            var source = ImageSource.FromResource("gaweFirstSimpleNoteApp.Icons.add.png",
+                typeof(NotesPage).GetTypeInfo().Assembly);
+            AddNoteToolbarItem.IconImageSource =source;
         }
         protected override async void OnAppearing()
         {
