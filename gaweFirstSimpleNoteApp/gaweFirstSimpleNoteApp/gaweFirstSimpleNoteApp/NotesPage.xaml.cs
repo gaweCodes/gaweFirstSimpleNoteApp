@@ -12,9 +12,8 @@ namespace gaweFirstSimpleNoteApp
         public NotesPage()
         {
             InitializeComponent();
-            var source = ImageSource.FromResource("gaweFirstSimpleNoteApp.Icons.add.png",
+            AddNoteToolbarItem.IconImageSource = ImageSource.FromResource("gaweFirstSimpleNoteApp.Icons.add.png",
                 typeof(NotesPage).GetTypeInfo().Assembly);
-            AddNoteToolbarItem.IconImageSource =source;
         }
         protected override async void OnAppearing()
         {
