@@ -12,6 +12,9 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Icons\add.png" />
+    <EmbeddedResource Include="Icons\delete.png" />
+    <EmbeddedResource Include="Icons\edit.png" />
+    <EmbeddedResource Include="Icons\save.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,10 +24,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="NoteEntryPage.xaml">
+    <EmbeddedResource Update="Views\EditNotePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="NotesPage.xaml">
+    <EmbeddedResource Update="Views\NoteEntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AddNotePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NotesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using gaweFirstSimpleNoteApp.Data;
+using gaweFirstSimpleNoteApp.Views;
 using Xamarin.Forms;
 
 namespace gaweFirstSimpleNoteApp
