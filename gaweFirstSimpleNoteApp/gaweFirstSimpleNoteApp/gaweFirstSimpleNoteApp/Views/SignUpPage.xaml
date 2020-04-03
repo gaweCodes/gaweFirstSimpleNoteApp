@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:gaweFirstSimpleNoteApp.ViewModels;assembly=gaweFirstSimpleNoteApp"
+             mc:Ignorable="d"
+             x:Class="gaweFirstSimpleNoteApp.Views.SignUpPage"
+             Title="Sign up">
+    <ContentPage.BindingContext>
+        <viewModels:SignUpViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="{StaticResource PageMargin}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Entry Text="{Binding SignUpDto.Firstname }" Placeholder="Firstname" Grid.Column="0" Grid.Row="0" Keyboard="Email" />
+            <Entry Text="{Binding SignUpDto.Lastname}" Placeholder="Lastname" Grid.Column="0" Grid.Row="2" />
+            <Entry Text="{Binding SignUpDto.Username}" Keyboard="Email" Placeholder="Mail address" Grid.Column="0" Grid.Row="4" />
+            <Entry Text="{Binding SignUpDto.Password}" IsPassword="True" Placeholder="Password" Grid.Column="0" Grid.Row="6" />
+            <Entry Text="{Binding PasswordConfirmation}" IsPassword="True" Placeholder="Password" Grid.Column="0" Grid.Row="8" />
+            <Button Command="{Binding SignUp}" Text="Sign up" Grid.Column="0" Grid.Row="10"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

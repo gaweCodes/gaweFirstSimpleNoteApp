@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:gaweFirstSimpleNoteApp.ViewModels;assembly=gaweFirstSimpleNoteApp"
+             mc:Ignorable="d"
+             x:Class="gaweFirstSimpleNoteApp.Views.SignInPage"
+             Title="Sign in">
+    <ContentPage.BindingContext>
+        <viewModels:SignInViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="{StaticResource PageMargin}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Entry Text="{Binding SignInDto.Username}" Placeholder="Mail address" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Keyboard="Email" />
+            <Entry Text="{Binding SignInDto.Password}" IsPassword="True" Placeholder="Password" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" />
+            <Button Command="{Binding SignIn}" Text="Sign in" Grid.Column="0" Grid.Row="4" />
+            <Button Command="{Binding SignUp}" Text="Sign up" Grid.Column="1" Grid.Row="4"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -28,7 +28,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Label Text="{Binding Title}" TextColor="Black" FontSize="Medium" Grid.Column="0" Grid.Row="0" />
-                            <Label Text="{Binding Date, StringFormat='{}{0:dd.MM.yyy HH:mm}'}" TextColor="#2C2C2C" Grid.Column="0" Grid.Row="1" />
+                            <Label Text="{Binding LastModifiedAt, StringFormat='{}{0:dd.MM.yyy HH:mm}'}" TextColor="#2C2C2C" Grid.Column="0" Grid.Row="1" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

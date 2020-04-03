@@ -14,9 +14,11 @@ namespace gaweFirstSimpleNoteApp.Views
             AddNoteToolbarItem.IconImageSource = ImageSource.FromResource("gaweFirstSimpleNoteApp.Icons.add.png",
                 typeof(NotesPage).GetTypeInfo().Assembly);
         }
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
-            BindingContext = new NotesViewModel();
+            var viewModel = new NotesViewModel();
+            await viewModel.LoadNotes();
+            BindingContext = viewModel;
             base.OnAppearing();
         }
     }

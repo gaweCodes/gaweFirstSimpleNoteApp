@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gaweFirstSimpleNoteApp.Andr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gaweFirstSimpleNoteApp.iOS", "gaweFirstSimpleNoteApp\gaweFirstSimpleNoteApp.iOS\gaweFirstSimpleNoteApp.iOS.csproj", "{1D972604-B7C7-4ED4-B7E3-E3511DFF490B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gaweFirstSimpleNoteApp", "gaweFirstSimpleNoteApp\gaweFirstSimpleNoteApp\gaweFirstSimpleNoteApp.csproj", "{054C3390-F47B-4668-8A33-97DA0F3FB36A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gaweFirstSimpleNoteApp", "gaweFirstSimpleNoteApp\gaweFirstSimpleNoteApp\gaweFirstSimpleNoteApp.csproj", "{054C3390-F47B-4668-8A33-97DA0F3FB36A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
