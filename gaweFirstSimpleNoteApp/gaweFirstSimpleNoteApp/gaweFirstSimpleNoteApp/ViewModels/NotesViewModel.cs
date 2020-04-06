@@ -23,11 +23,14 @@ namespace gaweFirstSimpleNoteApp.ViewModels
                 OnPropertyChanged(nameof(SelectedNote));
             }
         }
+        public string UserGreeting { get; }
         public ObservableCollection<Note> Notes { get; }
         public ICommand AddNote { get; }
         public ICommand ChangedSelection { get; }
         public NotesViewModel()
         {
+            UserGreeting =
+                $"Hello, {((User)Application.Current.Properties["user"]).Fullname}!";
             Notes = new ObservableCollection<Note>();
             AddNote = new Command(async () =>
                 await Application.Current.MainPage.Navigation.PushAsync(new AddNotePage()));
